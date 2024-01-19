@@ -1,5 +1,3 @@
-# main.tf
-
 terraform {
   required_providers {
     docker = {
@@ -12,18 +10,17 @@ terraform {
 provider "docker" {}
 
 resource "docker_image" "nginx" {
-  name         = "nginx:latest"
+  name         = "nginx"
   keep_locally = false
 }
 
 resource "docker_container" "nginx" {
   image = docker_image.nginx.image_id
-  name  = var.container_name
+  name  = "tutorial"
+
   ports {
     internal = 80
-    external = 8080
+    external = 8000
   }
 }
-
-
 

@@ -11,7 +11,7 @@ terraform {
     workspaces {
       name = "learn-terraform-azure"
     }
-  }  
+  }
 
   required_version = ">= 1.1.0"
 }
